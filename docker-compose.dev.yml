@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/dev.Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+    environment:
+      - SQL_LOGS=2
+      - DATABASE_URL=postgres://pg:pg@db:5432/example?sslmode=disable
+      - GO_ENV=development
+      - PORT=8080
+
+  db:
+    image: postgres:15
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_USER=pg
+      - POSTGRES_PASSWORD=pg
+      - POSTGRES_DB=example
+    volumes:
+      - ./data/:/var/lib/postgresql/data
