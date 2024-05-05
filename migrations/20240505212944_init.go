@@ -2,7 +2,7 @@ package migrations
 
 import (
 	"context"
-	"github.com/dscamargo/template_go_w_cli/internal/models"
+	"github.com/dscamargo/go_app_template/internal/models"
 	"log/slog"
 
 	"github.com/uptrace/bun"

@@ -1,4 +1,4 @@
-package pkg
+package web
 
 import (
 	"crypto/x509"

@@ -1,4 +1,4 @@
-module github.com/dscamargo/template_go_w_cli
+module github.com/dscamargo/go_app_template
 
 go 1.22.0
 

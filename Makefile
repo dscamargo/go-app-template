@@ -14,5 +14,5 @@ run-app:
 	docker-compose -f docker-compose.dev.yml up -d --force-recreate
 
 build-run: docker-build
-	$(MAKE) run-container
+	$(MAKE) run-app
 	$(MAKE) enter-container

@@ -2,8 +2,8 @@ package services
 
 import (
 	"context"
-	"github.com/dscamargo/template_go_w_cli/internal/models"
-	"github.com/dscamargo/template_go_w_cli/internal/repositories"
+	"github.com/dscamargo/go_app_template/internal/models"
+	"github.com/dscamargo/go_app_template/internal/repositories"
 )
 
 type ExampleService struct {

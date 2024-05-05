@@ -3,7 +3,7 @@ package repositories
 import (
 	"context"
 	"fmt"
-	"github.com/dscamargo/template_go_w_cli/internal/models"
+	"github.com/dscamargo/go_app_template/internal/models"
 	"github.com/uptrace/bun"
 )
 

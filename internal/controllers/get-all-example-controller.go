@@ -2,8 +2,8 @@ package controllers
 
 import (
 	"context"
-	"github.com/dscamargo/template_go_w_cli/internal/services"
-	"github.com/dscamargo/template_go_w_cli/pkg/web"
+	"github.com/dscamargo/go_app_template/internal/services"
+	"github.com/dscamargo/go_app_template/pkg/web"
 	"github.com/gofiber/fiber/v2"
 	"log/slog"
 	"time"
