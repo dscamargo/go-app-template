@@ -1,7 +1,7 @@
 package config
 
 import (
-	"os"
+	"github.com/dscamargo/go_app_template/pkg"
 )
 
 type server struct {
@@ -26,14 +26,14 @@ type Config struct {
 func New() *Config {
 	return &Config{
 		Server: server{
-			Port: os.Getenv("PORT"),
-			Env:  os.Getenv("GO_ENV"),
+			Port: pkg.GetEnvOrDefault("PORT", "8080"),
+			Env:  pkg.GetEnvOrDefault("GO_ENV", "development"),
 		},
 		Database: database{
-			URL: os.Getenv("DATABASE_URL"),
+			URL: pkg.GetEnvOrDefault("DATABASE_URL", ""),
 		},
 		App: app{
-			PublicKeyPath: os.Getenv("PUBLIC_KEY_PATH"),
+			PublicKeyPath: pkg.GetEnvOrDefault("PUBLIC_KEY_PATH", "ssl/public.key"),
 		},
 	}
 }
