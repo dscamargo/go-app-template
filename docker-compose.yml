@@ -13,6 +13,7 @@ services:
       - DATABASE_URL=postgres://pg:pg@db:5432/example?sslmode=disable
       - GO_ENV=development
       - PORT=8080
+      - PUBLIC_KEY_PATH=ssl/public.key
 
   db:
     image: postgres:15

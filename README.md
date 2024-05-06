@@ -39,7 +39,7 @@
 - Run `make run-db` to run database service.
 - Run `make compose-build` to build the app.
 - Run `make run-dev` to start the app and attach in container.
-- Move your authentication public key to ssl folder and remove to `public.key`.
+- If application needs authentication, create a public key file and set the path in docker-compose environment (`PUBLIC_KEY_PATH`).
 - Inside container, run `air .` to run application with live reload.
 - Make sure your application is working correctly with database using `GET /health`, it should return `{"ping":"pong"}` and status code 200.
 - Enjoy !

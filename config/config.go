@@ -13,9 +13,14 @@ type database struct {
 	URL string
 }
 
+type app struct {
+	PublicKeyPath string
+}
+
 type Config struct {
 	Server   server
 	Database database
+	App      app
 }
 
 func New() *Config {
@@ -26,6 +31,9 @@ func New() *Config {
 		},
 		Database: database{
 			URL: os.Getenv("DATABASE_URL"),
+		},
+		App: app{
+			PublicKeyPath: os.Getenv("PUBLIC_KEY_PATH"),
 		},
 	}
 }

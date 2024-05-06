@@ -77,7 +77,7 @@ func appCommands(config *config.Config, db *bun.DB, exampleService *services.Exa
 				})
 
 				//Check jwt
-				pubKey, err := web.ReadPublicKey()
+				pubKey, err := web.ReadPublicKey(config.App.PublicKeyPath)
 				if err != nil {
 					slog.Error("ReadPublicKey", "error", err.Error())
 					os.Exit(1)

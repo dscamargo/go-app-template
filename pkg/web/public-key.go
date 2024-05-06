@@ -7,8 +7,8 @@ import (
 	"os"
 )
 
-func ReadPublicKey() (any, error) {
-	f, err := os.ReadFile("ssl/public.key")
+func ReadPublicKey(filePath string) (any, error) {
+	f, err := os.ReadFile(filePath)
 	if err != nil {
 		return "", fmt.Errorf("error reading public key: %w", err)
 	}
