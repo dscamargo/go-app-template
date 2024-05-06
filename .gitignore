@@ -4,3 +4,4 @@ tmp/
 ssl/*
 !ssl/.gitkeep
 data/
+app

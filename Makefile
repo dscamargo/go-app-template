@@ -1,18 +1,15 @@
 build:
 	GOOS=linux GOARCH=arm64 CGO_ENABLED=0 go build -o app cmd/cli/main.go
 
-docker-build:
-	docker-compose -f docker-compose.dev.yml build
-
-enter-container:
-	docker-compose -f docker-compose.dev.yml exec app bash
-
 run-db:
-	docker-compose -f docker-compose.dev.yml up -d db
+	docker-compose up db -d
 
-run-app:
-	docker-compose -f docker-compose.dev.yml up -d --force-recreate
+compose-build:
+	docker-compose build
 
-build-run: docker-build
-	$(MAKE) run-app
-	$(MAKE) enter-container
+exec-bash:
+	docker-compose exec app bash
+
+run-dev:
+	docker-compose up app -d --force-recreate
+	$(MAKE) exec-bash
