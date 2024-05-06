@@ -8,7 +8,6 @@
 - [Urfave CLI](https://cli.urfave.org/)
 
 ### CLI Commands
-
 - go run cmd/cli/main.go [command]
 
 | Command          | Description                                                  |
@@ -23,22 +22,24 @@
 | db status        | Show database migrations status                              |
 
 ### Makefile commands
-
 - make [command]
 
-| Command       | Description                                              |
-|---------------|----------------------------------------------------------|
-| build         | Golang build                                             |
-| run-db        | Run docker compose database service                      |
-| compose-build | Run docker compose build                                 |
-| exec-bash     | Run docker compose exec in app service                   |
-| run-dev       | Run application in dev mode with live reload|
+| Command       | Description                                  |
+|---------------|----------------------------------------------|
+| build         | Golang build                                 |
+| run-db        | Run docker compose database service          |
+| compose-build | Run docker compose build                     |
+| exec-bash     | Run docker compose exec in app service       |
+| run-dev       | Run application in dev mode with live reload |
 
 ### How to use
 
-- Create a repository choosing the template
-- Rename go module
-- Run `make run-db` to run database service
-- Run `make compose-build` to build the app
-- Run `make run-dev` to start the app and attach in container
+- Create a repository choosing the template.
+- Rename go module.
+- Run `make run-db` to run database service.
+- Run `make compose-build` to build the app.
+- Run `make run-dev` to start the app and attach in container.
+- Move your authentication public key to ssl folder and remove to `public.key`.
+- Inside container, run `air .` to run application with live reload.
+- Make sure your application is working correctly with database using `GET /health`, it should return `{"ping":"pong"}` and status code 200.
 - Enjoy !

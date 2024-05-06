@@ -73,7 +73,7 @@ func appCommands(config *config.Config, db *bun.DB, exampleService *services.Exa
 					if err != nil {
 						return web.NewInternalServerError(c)
 					}
-					return web.NewNoContentResponse(c)
+					return web.NewOKResponse(c, map[string]string{"ping": "pong"})
 				})
 
 				//Check jwt
